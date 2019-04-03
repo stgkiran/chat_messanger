@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import com.db.websocket.chat.model.ChatMessage;
 
 /**
- * Created by rajeevkumarsingh on 24/07/17.
+ * kiran on 24/07/17.
  */
 @Controller
 public class ChatController {
@@ -25,6 +25,7 @@ public class ChatController {
     public ChatMessage addUser(@Payload ChatMessage chatMessage,
                                SimpMessageHeaderAccessor headerAccessor) {
         // Add username in web socket session
+        //
         headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
         return chatMessage;
     }
